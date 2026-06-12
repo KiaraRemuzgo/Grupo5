@@ -18,6 +18,7 @@ struct Nodo{
 
 void registrar();
 void listar();
+void contarProductos();
 
 int main(){
     char opc;
@@ -26,7 +27,8 @@ int main(){
         cout<<"FARMACIA SALUD TOTAL"<<endl;
         cout<<"1.Registrar producto"<<endl;
         cout<<"2.Listar productos"<<endl;
-        cout<<"3.Salir"<<endl;
+        cout<<"3.Contar productos"<<endl;
+        cout<<"4.Salir"<<endl;
 
         cout<<"Elija una opcion"<<endl;
         cin>>op;
@@ -38,10 +40,15 @@ int main(){
             case 2:{
                 listar();
                 break;
+            }   
+            case 3:{
+                contarProductos();
+                break;
             }
-        }
+     }
+    
         system("cls");
-    }while(op!=3);
+    }while(op!=4);
     getch();
     return 0;
 }
@@ -113,4 +120,16 @@ void listar(){
             getch();
         }
     }
+}
+void contarProductos(){
+    int contador = 0;
+    cola = primero;
+
+    while(cola != NULL){
+        contador++;
+        cola = cola->sig;
+    }
+
+    cout<<"Total de productos registrados: "<<contador<<endl;
+    getch();
 }
