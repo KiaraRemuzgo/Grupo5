@@ -5,6 +5,7 @@ int main() {
     string nombres[100];
     string carreras[100];
     int edades[100];
+    int semestres[100]; 
     int cantidad = 0;
     int opcion;
 
@@ -27,6 +28,9 @@ int main() {
                 cout << "Carrera: ";
                 cin >> carreras[cantidad];
 
+                cout << "Semestre (1-10): ";   // NUEVO
+                cin >> semestres[cantidad]; 
+
                 cantidad++;
                 cout << "Estudiante registrado.\n";
                 break;
@@ -38,6 +42,7 @@ int main() {
                     cout << "Nombre: " << nombres[i] << endl;
                     cout << "Edad: " << edades[i] << endl;
                     cout << "Carrera: " << carreras[i] << endl;
+                    cout << "Semestre: "  << semestres[i]  << endl;
                 }
                 break;
 
